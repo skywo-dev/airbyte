@@ -7,7 +7,6 @@ steps:
       workingDirectory: ''
       gradleWrapperFile: 'gradlew'
       tasks: 'build'
-      options: '-Xmx4096m'
       publishJUnitResults: true
       testResultsFiles: '**/build/test-results/test/*.xml'
       javaHomeOption: 'JDKVersion'
