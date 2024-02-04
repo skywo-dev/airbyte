@@ -1,0 +1,15 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: Gradle@3
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      tasks: 'build'
+      options: '-Xmx4096m'
+      publishJUnitResults: true
+      testResultsFiles: '**/build/test-results/test/*.xml'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.17'
+      jdkArchitectureOption: 'x64'
