@@ -1,0 +1,18 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  CI_GIT_BRANCH: $(Build.SourceBranchName)
+  CI_GIT_REVISION: $(Build.SourceVersion)
+
+steps:
+  - task: Gradle@3
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      tasks: 'build'
+      publishJUnitResults: true
+      testResultsFiles: '**/build/test-results/test/*.xml'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.17'
+      jdkArchitectureOption: 'x64'

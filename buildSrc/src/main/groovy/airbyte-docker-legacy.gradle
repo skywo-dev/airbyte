@@ -314,18 +314,18 @@ class AirbyteDockerLegacyPlugin implements Plugin<Project> {
         }
 
         // Used for base-normalization.
-        if (project.name.endsWith('base-normalization')) {
-            ['airbyteDockerMSSql'     : 'mssql',
-             'airbyteDockerMySql'     : 'mysql',
-             'airbyteDockerOracle'    : 'oracle',
-             'airbyteDockerClickhouse': 'clickhouse',
-             'airbyteDockerSnowflake' : 'snowflake',
-             'airbyteDockerRedshift'  : 'redshift',
-             'airbyteDockerTiDB'      : 'tidb',
-             'airbyteDockerDuckDB'    : 'duckdb'
-            ].forEach {taskName, customConnector ->
-                AirbyteDockerLegacyTaskFactory.build(project, taskName, "${customConnector}.Dockerfile")
-            }
-        }
+//        if (project.name.endsWith('base-normalization')) {
+//            ['airbyteDockerMSSql'     : 'mssql',
+//             'airbyteDockerMySql'     : 'mysql',
+//             'airbyteDockerOracle'    : 'oracle',
+//             'airbyteDockerClickhouse': 'clickhouse',
+//             'airbyteDockerSnowflake' : 'snowflake',
+//             'airbyteDockerRedshift'  : 'redshift',
+//             'airbyteDockerTiDB'      : 'tidb',
+//             'airbyteDockerDuckDB'    : 'duckdb'
+//            ].forEach {taskName, customConnector ->
+//                AirbyteDockerLegacyTaskFactory.build(project, taskName, "${customConnector}.Dockerfile")
+//            }
+//        }
     }
 }
